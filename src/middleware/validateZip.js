@@ -1,9 +1,9 @@
 function validateZip(req, res, next) {
     const zip = req.params.zip;
-    if(typeof(parseInt(zip)) === "number" && zip.length === 5){
+    if((/^-?\d+$/.test(zip)) && zip.length === 5){
         next();
     }else{
-        next(`Zip ${zip} is invalid!`);
+        next(`Zip (${zip}) is invalid!`);
     }
 }
 
