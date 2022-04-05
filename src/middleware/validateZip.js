@@ -1,5 +1,5 @@
 function validateZip(req, res, next) {
-    const zip = req.params.zip;
+    const {zip} = req.params;
     if((/^-?\d+$/.test(zip)) && zip.length === 5){
         next();
     }else{
